@@ -23,6 +23,9 @@
 		print "<br/>";
 		print in_array(4,$array1);
 		
+		//booleans
+		$bool1=true;
+		print $bool1;
 	?>
 </body>
 </html>
