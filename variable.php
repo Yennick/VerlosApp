@@ -26,6 +26,7 @@
 		//booleans
 		$bool1=true;
 		print $bool1;
+		print isset($Var1);
 	?>
 </body>
 </html>
