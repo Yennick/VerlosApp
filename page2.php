@@ -9,8 +9,12 @@
 	
 	<?php  	
 		//hello world comment
-		print "hello"." world<br />";
-		print 3+5;    
+		print_r($_GET);
+		$id = $_GET['id'];
+		$name = $_GET['name'];
+		print "<br/>The ID: {$id}";
+		print "<br/>The name: {$name}";
+		
 	?>
 </body>
 </html>

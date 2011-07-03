@@ -7,10 +7,7 @@
 
 <body>
 	
-	<?php  	
-		//hello world comment
-		print "hello"." world<br />";
-		print 3+5;    
-	?>
+    <a href="page2.php?id=1&name=alex">Page 2</a>
+    
 </body>
 </html>
