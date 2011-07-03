@@ -16,5 +16,6 @@
 		print "<br/>The name: {$name}";
 		
 	?>
+    
 </body>
 </html>

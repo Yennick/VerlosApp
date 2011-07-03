@@ -9,5 +9,11 @@
 	
     <a href="page2.php?id=1&name=alex">Page 2</a>
     
+    <form action="process.php" method="post">
+		Praktijknaam: <input type="text" name="praktijk" value="" /><br />
+        Straat: <input type="text" name="straat" value="" /><br />
+        Postcode: <input type="text" name="postcode" value="" /><br />
+        <input type="submit" name="submit" value="Opslaan" />
+    </form>
 </body>
 </html>
