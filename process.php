@@ -39,7 +39,7 @@ if (!$db_select){
 	if (!$result){
 	die("DB failed:" . mysql_error());
 	}
-	
+
 // 4.use returned data
 	while ($row = mysql_fetch_array($result)){
 		print $row["praktijk"]. " " .$row["straat"]. " ". $row["huisnummer"]."<br/>";
@@ -47,7 +47,7 @@ if (!$db_select){
 		
 	// join query 
 		 
-	$result = mysql_query("SELECT praktijken.praktijk, type_werk.werk "."FROM praktijken, type_werk "."WHERE praktijken.praktijk_id = type_werk.praktijk_id", $db);
+	$result = mysql_query("SELECT praktijken.praktijk, type_werk.werk FROM praktijken, type_werk WHERE praktijken.praktijk_id = type_werk.praktijk_id", $db);
 
 	//print
 	while($row = mysql_fetch_array($result)){
