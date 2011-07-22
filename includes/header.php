@@ -3,6 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Verloskunde App</title>
+
+<link rel="stylesheet" href="css/screen.css" media="screen, projection" type="text/css" />
+<link rel="stylesheet" href="css/print.css" media="print" type="text/css" />
+<!--[if lt IE 8]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+
 </head>
 <body>
-<h1>VerlosApp</h1>
+<div class='container'>
