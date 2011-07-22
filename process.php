@@ -7,15 +7,11 @@
 </head>
 
 <body>
-<?php
 
+<?php
 $praktijk = $_POST['praktijk'];
 $straat = $_POST['straat'];
 $postcode = $_POST['postcode'];
-
-$_SESSION['praktijk'] = $praktijk;
-$_SESSION['straat'] = $straat;
-$_SESSION['postcode'] = $postcode;
 
 print "{$praktijk} zit in de {$straat} met postcode {$postcode}";
 print "Praktijk:{$_SESSION['praktijk']} Straat:{$_SESSION['straat']} Postcode: {$_SESSION['postcode']}"
@@ -33,7 +29,7 @@ $db_select = mysql_select_db("verloskunde_data",$db);
 if (!$db_select){
 	die("DB failed:" . mysql_error());
 	}
-	
+
 // 3.Perform database query
 	$result = mysql_query("SELECT * FROM praktijken", $db);
 	if (!$result){
@@ -45,15 +41,15 @@ if (!$db_select){
 		print $row["praktijk"]. " " .$row["straat"]. " ". $row["huisnummer"]."<br/>";
 		}
 		
-	// join query 
+	// relational query 
 		 
-	$result = mysql_query("SELECT praktijken.praktijk, type_werk.werk FROM praktijken, type_werk WHERE praktijken.praktijk_id = type_werk.praktijk_id", $db);
+	$result = mysql_query("SELECT praktijken.praktijk, werk.werktype FROM praktijken, werk WHERE praktijken.praktijk_id = werk.praktijk_id", $db);
 
 	//print
 	while($row = mysql_fetch_array($result)){
-		echo $row['praktijk']. " - ". $row['werk'];
+		echo $row['praktijk']. " - ". $row['werktype'];
 		echo "<br />";
-
+	}
 // 5.mysql close
 	mysql_close($db);
 ?>
