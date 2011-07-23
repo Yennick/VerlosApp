@@ -15,9 +15,9 @@
 		."<strong>".
 				$verloskundigen_array["voornaam"] . " " . $verloskundigen_array["achternaam"]
 		."</strong><br /><i>".
-				$verloskundigen_array["praktijk"]
+				$verloskundigen_array["praktijk_id"]
 		."</i><br />".
-				$praktijk_array["mobiel"]
+				$verloskundigen_array["mobiel"]
 		."</li>";
 	}
 	print "</ul>";
