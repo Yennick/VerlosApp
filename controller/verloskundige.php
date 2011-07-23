@@ -3,26 +3,24 @@
 <?php
 // process all form variables for praktijk
 $praktijk = $_POST['praktijk'];
-$straat = $_POST['straat'];
-$huisnummer = $_POST['huisnummer'];
-$postcode = $_POST['postcode'];
-$stad = $_POST['stad'];
-$zorgeenheden = $_POST['zorgeenheden'];
+$voornaam = $_POST['voornaam'];
+$voorletters = $_POST['voorletters'];
+$achternaam = $_POST['achternaam'];
+$mobiel = $_POST['mobiel'];
 
 // insert into database
 
-$query = 	"INSERT INTO praktijken (praktijk, straat, huisnummer, postcode, stad, zorgeenheden)
+$query = 	"INSERT INTO verloskundigen (praktijk_id, voornaam, voorletters, achternaam, mobiel)
 			VALUES (
-					'{$praktijk}', 
-					'{$straat}',
-					'{$huisnummer}', 
-					'{$postcode}', 
-					'{$stad}', 
-					{$zorgeenheden}
+					'{$praktijk}',
+					'{$voornaam}', 
+					'{$voorletters}',
+					'{$achternaam}', 
+					{$mobiel}
 			)";
 if (mysql_query ($query, $db)) {
 	//Success!
-	print ("<p>Praktijk is toegevoegd</p>");
+	print ("<p>Verloskundige is toegevoegd</p>");
 	print ("<a href=\"../index.php\">Ga terug</a>");
 } else {
 	//Display error message.
