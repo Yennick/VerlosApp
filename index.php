@@ -1,3 +1,4 @@
+<?php require_once("includes/functions.php"); ?>
 <?php include("includes/header.php"); ?>
 
 <div class='span-24 caption'><h1>VerlosApp</h1></div>
