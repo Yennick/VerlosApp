@@ -2,10 +2,9 @@
 <?php include("includes/header.php"); ?>
 
 <?php
+//Get praktijken for radio button list later on
 $praktijken = mysql_query("SELECT * FROM praktijken", $db);
-if (!$praktijken){
-	die("DB failed:" . mysql_error());
-	}
+confirm_query($praktijken);
 ?>
 
 <div class="span-24"><h1>Nieuwe verloskundige</h1></div>

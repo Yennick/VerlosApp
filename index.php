@@ -13,7 +13,7 @@
 
 <div class="span-7 box">
 	<strong>Facturen</strong>
-    <p>Nieuw</p>
+    <p><a href="factuur_new.php">Nieuw</a></p>
 </div>
 
 <div class="span-7 box">KNOV tarieven</div>
