@@ -1,3 +1,4 @@
+<?php require_once("includes/functions.php"); ?>
 <?php include ("/includes/header.php"); ?>
 
 <?php
@@ -7,18 +8,32 @@
 	die("DB failed:" . mysql_error());
 	}
 
-// 4.use returned data
+// Start verloskundigen list
 	print "<ul>";
-	while ($verloskundigen_array = mysql_fetch_array($verloskundigen))
+	
+// Loop through verloskundigen en print verloskundige array	
+	while ($verloskundige_array = mysql_fetch_array($verloskundigen))
 	{
-		print 	"<li>"
+		print 	
+		"<li>"
 		."<strong>".
-				$verloskundigen_array["voornaam"] . " " . $verloskundigen_array["achternaam"]
-		."</strong><br /><i>".
-				$verloskundigen_array["praktijk_id"]
-		."</i><br />".
-				$verloskundigen_array["mobiel"]
-		."</li>";
+				$verloskundige_array["voornaam"] . " " . $verloskundige_array["achternaam"]
+		."</strong><br /><i>";
+				
+				//Creates loop that searches for the praktijk that matches the praktijk_id in the verloskundige array.
+				$verloskundige_praktijk = mysql_query("SELECT * FROM praktijken WHERE praktijk_id = {$verloskundige_array['praktijk_id']}", $db);
+				if (!$verloskundige_praktijk){
+				die("DB failed:" . mysql_error());
+				}
+				
+				while ($praktijk_array = mysql_fetch_array($verloskundige_praktijk))
+				{
+					print($praktijk_array["praktijk"]);
+				}
+			
+		print "</i><br />".
+				$verloskundige_array["mobiel"]
+		."</li><br />";
 	}
 	print "</ul>";
 ?>
